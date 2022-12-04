@@ -1,0 +1,15 @@
+artifact_uri: file:///mnt/c/Users/PONNOU%20Wilfried/Desktop/Home-Credit-Risk-Classification/home-credit-risk-classification/src/mlruns/0/e69ea835a9584c4fbecef0a15e01c384/artifacts
+end_time: 1670180331458
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e69ea835a9584c4fbecef0a15e01c384
+run_name: secretive-wren-947
+run_uuid: e69ea835a9584c4fbecef0a15e01c384
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670180317861
+status: 3
+tags: []
+user_id: wilfried
