@@ -1,0 +1,15 @@
+artifact_uri: file:///mnt/c/Users/PONNOU%20Wilfried/Desktop/Home-Credit-Risk-Classification/home-credit-risk-classification/src/mlruns/0/730f05235cc64635b2a6eb0d43f5fb0f/artifacts
+end_time: 1670231287308
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 730f05235cc64635b2a6eb0d43f5fb0f
+run_name: learned-finch-376
+run_uuid: 730f05235cc64635b2a6eb0d43f5fb0f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670231276156
+status: 3
+tags: []
+user_id: wilfried

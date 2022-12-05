@@ -1,9 +1,18 @@
-Home-Credit-Risk-Classification
+# Home-Credit-Risk-Classification
+
+To run the training, first run
+````
+$ pip install -r requirements.txt
+````
+Then go to src folder and run
+````
+python main.py <percentage> <max_depth> <random_state> <y_test_size> <delete_threshold>
+````
 ==============================
 
-Big Data Application Course
+## Big Data Application Course
 
-Project Organization
+### Project Organization
 ------------
 
     ├── LICENSE
