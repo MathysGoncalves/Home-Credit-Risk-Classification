@@ -37,7 +37,7 @@ def missing_values_table(df:pd.DataFrame)->pd.DataFrame:
     return mis_val_table_ren_columns
 
 
-def delete_missing_values_cols(df_train:pd.DataFrame,df_test:pd.DataFrame, threshold: float)-> Tuple[pd.DataFrame,pd.DataFrame]:
+def delete_missing_values_cols(df_train:pd.DataFrame, df_test:pd.DataFrame, threshold:float)-> Tuple[pd.DataFrame,pd.DataFrame]:
    """
    Deletes columns which % of missing values is higher than threshold specified by user
     

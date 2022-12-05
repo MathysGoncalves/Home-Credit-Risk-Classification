@@ -1,7 +1,9 @@
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.datasets import make_classification
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, StratifiedKFold, RandomizedSearchCV
+import lightgbm as lgb
 import pandas as pd
+import time
 
 def splitter(df:pd.DataFrame,test_size:float)->tuple:
     """
@@ -21,7 +23,7 @@ def splitter(df:pd.DataFrame,test_size:float)->tuple:
     """
     X=df.drop(columns=['TARGET','SK_ID_CURR'])
     y=df['TARGET']
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=42, stratify=y)
     return X_train,X_test,y_train,y_test
 
 def trainer(X_train,y_train,max_depth,random_state):
@@ -47,7 +49,23 @@ def trainer(X_train,y_train,max_depth,random_state):
     Model clf
         sklearn model
     """
-    clf = RandomForestClassifier(max_depth=max_depth, random_state=random_state)
+
+    parameters = {'num_leaves':[20,40,60,80,100],
+                 'min_child_samples':[5,10,15],
+                 'max_depth':[-1,5,10,20],
+                 'learning_rate':[0.05,0.1,0.2],
+                 'reg_alpha':[0,0.01,0.03]}
+
+    start = time.time()
+
+    lgbm = lgb.LGBMClassifier()
+    clf = RandomizedSearchCV(lgbm, parameters, cv=StratifiedKFold(n_splits=5), random_state=42, n_jobs=-1)
     clf.fit(X_train, y_train)
+    
+    end = time.time()
+
+    print('Execution time is:')
+    print(end - start)
+    print(clf.best_params_)
     return clf
 
