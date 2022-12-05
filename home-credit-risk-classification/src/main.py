@@ -24,6 +24,22 @@ logger = logging.getLogger(__name__)
 
 
 def eval_metrics(actual, pred):
+    """
+    Function which calculates metrics all at once
+
+    Parameters
+    ----------
+    actual
+        List
+        True classes
+    pred
+        List
+        Predicted classes
+    Returns
+    -------
+    Floats rmse, mae, r2, acc_score
+        Floats
+    """
     rmse = np.sqrt(mean_squared_error(actual, pred))
     mae = mean_absolute_error(actual, pred)
     r2 = r2_score(actual, pred)
@@ -35,13 +51,21 @@ if __name__ == "__main__":
     warnings.filterwarnings("ignore")
     np.random.seed(40)
     
-    percentage=float(sys.argv[1])
-    max_depth = float(sys.argv[2])
-    random_state = int(sys.argv[3])
-    y_test_size= float(sys.argv[4])
-    delete_threshold= float(sys.argv[5])
+    # Variables to be specified while calling the main.py file 
+    percentage = float(sys.argv[1])            #% of the dataset you want to read
+    max_depth = float(sys.argv[2])             #max_depth of the random forest classifier model you will train
+    random_state = int(sys.argv[3])            #random_state of the random forest classifier model you will train
+    y_test_size = float(sys.argv[4])           #y_test_size as the size of test set for the train_test split
+    delete_threshold = float(sys.argv[5])      #delete_threshold threshold which specifies the % of missing values from which 
+                                               # you will delete columns
+    #-------------------------------------------------------------------------------
 
+    #!!!!!!!!!!!!!!!! CHANGE THESE PATHS TO YOUR CONVENIENCE IF NEEDED !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     train_dataset_path,test_dataset_path='./data/application_train.csv','./data/application_test.csv'
+    #train_url = 'https://drive.google.com/file/d/1dqswp6BOPyb86kF8bmkEt72AQVjsRDm3/view?usp=sharing'
+    #train_dataset_path = 'https://drive.google.com/uc?export=download&id='+train_url.split('/')[-2]
+    #test_url='https://drive.google.com/file/d/1ffdLDLekINEKcofjEkuaJE-qlHeJ51Ci/view?usp=sharing'
+    #test_dataset_path = 'https://drive.google.com/uc?export=download&id='+test_url.split('/')[-2]
 
     # Read the csv file
     try:
