@@ -5,7 +5,7 @@ import lightgbm as lgb
 import pandas as pd
 import time
 
-def splitter(df:pd.DataFrame,test_size:float)->tuple:
+def splitter(df:pd.DataFrame, test_size:float=0.2)->tuple:
     """
     Function which splits dataframe into train and test sets
 
@@ -26,7 +26,7 @@ def splitter(df:pd.DataFrame,test_size:float)->tuple:
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=42, stratify=y)
     return X_train,X_test,y_train,y_test
 
-def trainer(X_train,y_train,max_depth,random_state):
+def trainer(X_train,y_train):
     """
     Function which trains model on train_x and train_y
 
@@ -61,7 +61,7 @@ def trainer(X_train,y_train,max_depth,random_state):
     lgbm = lgb.LGBMClassifier()
     clf = RandomizedSearchCV(lgbm, parameters, cv=StratifiedKFold(n_splits=5), random_state=42, n_jobs=-1)
     clf.fit(X_train, y_train)
-    
+
     end = time.time()
 
     print('Execution time is:')

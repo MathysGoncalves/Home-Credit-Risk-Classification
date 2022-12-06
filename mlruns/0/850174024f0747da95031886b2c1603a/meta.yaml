@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mathysg/Documents/ML%20Ops/Home-Credit-Risk-Classification/mlruns/0/850174024f0747da95031886b2c1603a/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 850174024f0747da95031886b2c1603a
+run_name: thoughtful-crab-279
+run_uuid: 850174024f0747da95031886b2c1603a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670333237277
+status: 1
+tags: []
+user_id: mathysg

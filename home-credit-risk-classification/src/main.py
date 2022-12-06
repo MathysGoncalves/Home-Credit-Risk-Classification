@@ -53,7 +53,7 @@ if __name__ == "__main__":
     np.random.seed(40)
     
     # Variables to be specified while calling the main.py file 
-    percentage = float(sys.argv[1])            #% of the dataset you want to read
+    percentage = int(sys.argv[1])             #% of the dataset you want to read
     #max_depth = float(sys.argv[2])             #max_depth of the random forest classifier model you will train
     #random_state = int(sys.argv[3])            #random_state of the random forest classifier model you will train
     #y_test_size = float(sys.argv[4])           #y_test_size as the size of test set for the train_test split
@@ -61,8 +61,8 @@ if __name__ == "__main__":
                                                # you will delete columns
     #-------------------------------------------------------------------------------
 
-    #!!!!!!!!!!!!!!!! CHANGE THESE PATHS TO YOUR CONVENIENCE IF NEEDED !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    train_dataset_path,test_dataset_path='./home-credit-risk-classification/data/application_test.csv','./home-credit-risk-classification/data/application_test.csv' 
+    #! CHANGE THESE PATHS TO YOUR CONVENIENCE IF NEEDED
+    train_dataset_path,test_dataset_path='home-credit-risk-classification/data/application_train.csv','./home-credit-risk-classification/data/application_test.csv' 
     #train_url = 'https://drive.google.com/file/d/1dqswp6BOPyb86kF8bmkEt72AQVjsRDm3/view?usp=sharing'
     #train_dataset_path = 'https://drive.google.com/uc?export=download&id='+train_url.split('/')[-2]
     #test_url='https://drive.google.com/file/d/1ffdLDLekINEKcofjEkuaJE-qlHeJ51Ci/view?usp=sharing'
@@ -70,22 +70,21 @@ if __name__ == "__main__":
 
     # Read the csv file
     try:
-        train_dataset,test_dataset = datasets_loader(train_dataset_path,test_dataset_path, percentage)
+        train_dataset = datasets_loader(train_dataset_path, percentage)
     except Exception as e:
         logger.exception(
             "Unable to read files check path or arguments Error: %s", e
         )
     
     #building features/preprocessing
-    train_dataframe,test_dataframe= build_features.delete_missing_values_cols(train_dataset,test_dataset,0)
-    train_dataframe,test_dataframe= build_features.numerizer(train_dataframe, test_dataframe)
-    train_dataframe,test_dataframe= build_features.aligner(train_dataframe, test_dataframe)
-    train_dataframe,test_dataframe= build_features.missing_values_imputer(train_dataframe, test_dataframe)
-    train_dataframe,test_dataframe= build_features.min_max_scaler(train_dataframe, test_dataframe)
+    train_dataframe = build_features.delete_missing_values_cols(train_dataset)
+    train_dataframe = build_features.numerizer(train_dataframe)
+    #train_dataframe,test_dataframe= build_features.aligner(train_dataframe, test_dataframe)
+    train_dataframe = build_features.missing_values_imputer(train_dataframe)
+    train_dataframe = build_features.min_max_scaler(train_dataframe)
     
     # Split the data into training and test sets
-    train_x,test_x,train_y,test_y = train_model.splitter(train_dataframe,0.2)
-
+    train_x,test_x,train_y,test_y = train_model.splitter(train_dataframe)
 
 
     with mlflow.start_run():

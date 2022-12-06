@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mathysg/Documents/ML%20Ops/Home-Credit-Risk-Classification/mlruns/0/470af77faf8c4a8993dcd2d016f0ffe2/artifacts
+end_time: 1670333160726
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 470af77faf8c4a8993dcd2d016f0ffe2
+run_name: bustling-skunk-311
+run_uuid: 470af77faf8c4a8993dcd2d016f0ffe2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670333160660
+status: 4
+tags: []
+user_id: mathysg

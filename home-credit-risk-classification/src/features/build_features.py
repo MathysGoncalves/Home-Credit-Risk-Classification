@@ -6,7 +6,7 @@ from sklearn.preprocessing import MinMaxScaler
 from typing import Tuple
 
 #@Nikos Tavoularis
-def missing_values_table(df:pd.DataFrame)->pd.DataFrame:
+def missing_values_table(df:pd.DataFrame)-> pd.DataFrame:
     """
     Counts msising value and percentage of missing values in columns of the dataframe in decsending order
     
@@ -37,16 +37,14 @@ def missing_values_table(df:pd.DataFrame)->pd.DataFrame:
     return mis_val_table_ren_columns
 
 
-def delete_missing_values_cols(df_train:pd.DataFrame, df_test:pd.DataFrame, threshold:float)-> Tuple[pd.DataFrame,pd.DataFrame]:
+def delete_missing_values_cols(df:pd.DataFrame, threshold:float=15)-> pd.DataFrame:
    """
    Deletes columns which % of missing values is higher than threshold specified by user
     
     Parameters
     ----------
-    df_train
+    df
         train dataframe.
-    df_test
-        test dataframe.
     threshold
         threshold of % of missing value defined by user 
  
@@ -56,15 +54,13 @@ def delete_missing_values_cols(df_train:pd.DataFrame, df_test:pd.DataFrame, thre
         pd.DataFrame,pd.DataFrame
    """
     
-   missing_values_summary = missing_values_table(df_train)
+   missing_values_summary = missing_values_table(df)
    deleting_col_names = missing_values_summary[missing_values_summary['% of Total Values']>= threshold].index.values
-   new_train_df=df_train.drop(deleting_col_names, axis=1, inplace=False)
-   new_test_df=df_test.drop(deleting_col_names, axis=1, inplace=False)
-   #print("We have deleted according to your threshold "+str(len(deleting_col_names))+" columns,\n here's the new Dataframe")
-   return new_train_df, new_test_df
+   new_df=df.drop(deleting_col_names, axis=1, inplace=False)
+   return new_df
 
 #@Will Koehrsen
-def numerizer(df_train:pd.DataFrame,df_test:pd.DataFrame)->Tuple[pd.DataFrame,pd.DataFrame]:
+def numerizer(df:pd.DataFrame)->pd.DataFrame:
     """
     Function which encodes object type column created by Will Koehrsen
 
@@ -86,29 +82,25 @@ def numerizer(df_train:pd.DataFrame,df_test:pd.DataFrame)->Tuple[pd.DataFrame,pd
     le_count = 0
 
     # Iterate through the columns
-    for col in df_train:
-        if df_train[col].dtype == 'object':
+    for col in df:
+        if df[col].dtype == 'object':
             # If 2 or fewer unique categories
-            if len(list(df_train[col].unique())) <= 2:
+            if len(list(df[col].unique())) <= 2:
                 # Train on the training data
-                le.fit(df_train[col])
+                le.fit(df[col])
                 # Transform both training and testing data
-                df_train[col] = le.transform(df_train[col])
-                df_test[col] = le.transform(df_test[col])
+                df[col] = le.transform(df[col])
                 
                 # Keep track of how many columns were label encoded
                 le_count += 1
                 
-    #print('%d columns were label encoded.' % le_count)
     # one-hot encoding of categorical variables
-    df_train = pd.get_dummies(df_train)
-    df_test = pd.get_dummies(df_test)
+    df = pd.get_dummies(df)
 
     #print('Training Features shape: ', df_train.shape)
     #print('Testing Features shape: ', df_test.shape)
 
-    return df_train,df_test
-
+    return df
 #@Will Koehrsen
 def aligner(df_train: pd.DataFrame, df_test: pd.DataFrame) -> Tuple[pd.DataFrame,pd.DataFrame]:
     """
@@ -116,10 +108,8 @@ def aligner(df_train: pd.DataFrame, df_test: pd.DataFrame) -> Tuple[pd.DataFrame
 
     Parameters
     ----------
-    df_train
+    df
         train dataframe.
-    df_test
-        mtest dataframe.
  
     Returns
     -------
@@ -137,7 +127,7 @@ def aligner(df_train: pd.DataFrame, df_test: pd.DataFrame) -> Tuple[pd.DataFrame
     #print('Testing Features shape: ', df_test.shape)
     return df_train,df_test
    
-def missing_values_imputer(df_train: pd.DataFrame, df_test: pd.DataFrame) -> Tuple[pd.DataFrame,pd.DataFrame]:
+def missing_values_imputer(df_train: pd.DataFrame) -> pd.DataFrame:
     """
     Function which replaces missing values with median value of the column; inspired by Will Koehrsen
 
@@ -155,69 +145,51 @@ def missing_values_imputer(df_train: pd.DataFrame, df_test: pd.DataFrame) -> Tup
     """
     train_columns=list(df_train.columns.values)
     train_columns.remove("TARGET")
-    test_columns=list(df_test.columns.values)
     #print(train_columns)
     target = df_train['TARGET']
     df_train = df_train.drop(columns = ['TARGET'])
     imputer = SimpleImputer(missing_values=np.nan, strategy='mean')
     # Fit on the training data
-    #print(df_train.head())
     imputer.fit(df_train)
 
-
-    # Transform both training and testing data
+    # Transform both training
     train = imputer.transform(df_train)
-    #print(train)
-    test = imputer.transform(df_test)
     train_df = pd.DataFrame(train, columns = train_columns)
-    test_df = pd.DataFrame(test, columns = test_columns)
-    #print(train_df.head())
     train_df['TARGET']=target
-    return train_df,test_df
+    return train_df
 
-
-def min_max_scaler(df_train: pd.DataFrame, df_test: pd.DataFrame) -> Tuple[pd.DataFrame,pd.DataFrame]:
+def min_max_scaler(df: pd.DataFrame) -> pd.DataFrame:
     """
     Function min max scales columns because of shown highly skewed column, and wide range numerics
     in several columns; inspired by Will Koehrsen
 
     Parameters
     ----------
-    df_train
+    df
         train dataframe.
-    df_test
-        mtest dataframe.
  
     Returns
     -------
     dataframes with replaced missing values
         pd.DataFrames
     """
-    train_columns=list(df_train.columns.values)
-    train_columns.remove("TARGET")
-    train_columns.remove("SK_ID_CURR")
-    test_columns=list(df_test.columns.values)
-    test_columns.remove("SK_ID_CURR")
-    #print(train_columns)
-    target = df_train['TARGET']
-    train_id = df_train['SK_ID_CURR']
-    test_id = df_test['SK_ID_CURR']
-    df_train = df_train.drop(columns = ['TARGET','SK_ID_CURR'])
-    df_test = df_test.drop(columns = ['SK_ID_CURR'])
+    columns=list(df.columns.values)
+    columns.remove("TARGET")
+    columns.remove("SK_ID_CURR")
+
+    target = df['TARGET']
+    train_id = df['SK_ID_CURR']
+    df = df.drop(columns = ['TARGET','SK_ID_CURR'])
     scaler = MinMaxScaler()
-    #print(df_train.head())
+
     # Fit on the training data
-    scaler.fit(df_train)
+    scaler.fit(df)
 
     # Transform both training and testing data
-    train = scaler.transform(df_train)
-    #print(train)
-    test = scaler.transform(df_test)
+    train = scaler.transform(df)
 
-    train_df = pd.DataFrame(train, columns = train_columns)
-    test_df = pd.DataFrame(test, columns = test_columns)
-    #print(train_df.head())
-    train_df['TARGET']=target
-    train_df['SK_ID_CURR']=train_id.astype(int)
-    test_df['SK_ID_CURR']=test_id.astype(int)
-    return train_df,test_df
+    df = pd.DataFrame(train, columns = columns)
+
+    df['TARGET']=target
+    df['SK_ID_CURR']=train_id.astype(int)
+    return df
