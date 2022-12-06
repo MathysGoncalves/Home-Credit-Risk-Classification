@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mathysg/Documents/ML%20Ops/Home-Credit-Risk-Classification/mlruns/0/10030830b58b49319fb99f31fbf9583b/artifacts
+end_time: 1670338460473
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 10030830b58b49319fb99f31fbf9583b
+run_name: colorful-bear-645
+run_uuid: 10030830b58b49319fb99f31fbf9583b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670338428447
+status: 3
+tags: []
+user_id: mathysg

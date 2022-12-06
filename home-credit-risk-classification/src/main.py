@@ -1,7 +1,7 @@
 import os
 import warnings
 import sys
-
+import re
 import pandas as pd
 import numpy as np
 from sklearn.metrics import f1_score, recall_score, precision_score, accuracy_score, roc_auc_score
@@ -50,7 +50,7 @@ def eval_metrics(actual, pred):
 
 if __name__ == "__main__":
     warnings.filterwarnings("ignore")
-    np.random.seed(40)
+    np.random.seed(4)
     
     # Variables to be specified while calling the main.py file 
     percentage = int(sys.argv[1])             #% of the dataset you want to read
@@ -85,6 +85,7 @@ if __name__ == "__main__":
     
     # Split the data into training and test sets
     train_x,test_x,train_y,test_y = train_model.splitter(train_dataframe)
+    print()
 
 
     with mlflow.start_run():
@@ -93,7 +94,6 @@ if __name__ == "__main__":
 
         (roc_auc, precision, recall, acc_score, f1) = eval_metrics(test_y, predictions)
 
-        print("LightGBM model (max_depth=%f, random_state=%f):")
         print("  roc_auc: %s" % roc_auc)
         print("  Precision %s" % precision)
         print("  Recall: %s" % recall)
@@ -115,6 +115,6 @@ if __name__ == "__main__":
             # There are other ways to use the Model Registry, which depends on the use case,
             # please refer to the doc for more information:
             # https://mlflow.org/docs/latest/model-registry.html#api-workflow
-            mlflow.sklearn.log_model(model, "model", registered_model_name="RandomForestClassiferModel")
+            mlflow.sklearn.log_model(model, "model", registered_model_name="LightGBM_Model")
         else:
             mlflow.sklearn.log_model(model, "model")

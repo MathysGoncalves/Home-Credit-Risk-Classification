@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mathysg/Documents/ML%20Ops/Home-Credit-Risk-Classification/mlruns/0/b6e2faecf1294209a41f724d0b5ad870/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b6e2faecf1294209a41f724d0b5ad870
+run_name: colorful-trout-340
+run_uuid: b6e2faecf1294209a41f724d0b5ad870
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670337916632
+status: 1
+tags: []
+user_id: mathysg

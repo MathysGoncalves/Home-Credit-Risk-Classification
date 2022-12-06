@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mathysg/Documents/ML%20Ops/Home-Credit-Risk-Classification/mlruns/0/e7dcb107db644b43949019739964b7dc/artifacts
+end_time: 1670336507082
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e7dcb107db644b43949019739964b7dc
+run_name: sincere-worm-515
+run_uuid: e7dcb107db644b43949019739964b7dc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670336496084
+status: 3
+tags: []
+user_id: mathysg

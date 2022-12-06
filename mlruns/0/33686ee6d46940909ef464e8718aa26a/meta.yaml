@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mathysg/Documents/ML%20Ops/Home-Credit-Risk-Classification/mlruns/0/33686ee6d46940909ef464e8718aa26a/artifacts
+end_time: 1670339362045
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 33686ee6d46940909ef464e8718aa26a
+run_name: angry-sow-518
+run_uuid: 33686ee6d46940909ef464e8718aa26a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670339267535
+status: 4
+tags: []
+user_id: mathysg

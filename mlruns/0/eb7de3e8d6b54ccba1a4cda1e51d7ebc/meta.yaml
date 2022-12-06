@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mathysg/Documents/ML%20Ops/Home-Credit-Risk-Classification/mlruns/0/eb7de3e8d6b54ccba1a4cda1e51d7ebc/artifacts
+end_time: 1670339543059
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: eb7de3e8d6b54ccba1a4cda1e51d7ebc
+run_name: orderly-tern-259
+run_uuid: eb7de3e8d6b54ccba1a4cda1e51d7ebc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670339368260
+status: 3
+tags: []
+user_id: mathysg

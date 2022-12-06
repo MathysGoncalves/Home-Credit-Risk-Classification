@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mathysg/Documents/ML%20Ops/Home-Credit-Risk-Classification/mlruns/0/b45dee5942f145a397f522083122e23c/artifacts
+end_time: 1670336141863
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b45dee5942f145a397f522083122e23c
+run_name: powerful-sow-636
+run_uuid: b45dee5942f145a397f522083122e23c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670336139209
+status: 4
+tags: []
+user_id: mathysg

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mathysg/Documents/ML%20Ops/Home-Credit-Risk-Classification/mlruns/0/fe1153be8ea6465ba7e3e38f425e0b39/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: fe1153be8ea6465ba7e3e38f425e0b39
+run_name: sassy-slug-455
+run_uuid: fe1153be8ea6465ba7e3e38f425e0b39
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670335356369
+status: 1
+tags: []
+user_id: mathysg
