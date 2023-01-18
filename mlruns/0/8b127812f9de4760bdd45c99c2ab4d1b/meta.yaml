@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mathysg/Documents/ML%20Ops/Home-Credit-Risk-Classification/mlruns/0/8b127812f9de4760bdd45c99c2ab4d1b/artifacts
+end_time: 1674036936862
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8b127812f9de4760bdd45c99c2ab4d1b
+run_name: crawling-toad-75
+run_uuid: 8b127812f9de4760bdd45c99c2ab4d1b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674036866687
+status: 3
+tags: []
+user_id: adrien

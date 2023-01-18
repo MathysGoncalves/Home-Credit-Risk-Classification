@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mathysg/Documents/ML%20Ops/Home-Credit-Risk-Classification/mlruns/0/faf53ff85c794df4b1bada8e406c613c/artifacts
+end_time: 1674047672386
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: faf53ff85c794df4b1bada8e406c613c
+run_name: bustling-mare-2
+run_uuid: faf53ff85c794df4b1bada8e406c613c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674047616751
+status: 3
+tags: []
+user_id: adrien

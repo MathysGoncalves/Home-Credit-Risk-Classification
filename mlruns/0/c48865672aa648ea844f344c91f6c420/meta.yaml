@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mathysg/Documents/ML%20Ops/Home-Credit-Risk-Classification/mlruns/0/c48865672aa648ea844f344c91f6c420/artifacts
+end_time: 1674038495938
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c48865672aa648ea844f344c91f6c420
+run_name: suave-goat-577
+run_uuid: c48865672aa648ea844f344c91f6c420
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674038443330
+status: 3
+tags: []
+user_id: adrien

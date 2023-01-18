@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mathysg/Documents/ML%20Ops/Home-Credit-Risk-Classification/mlruns/0/d148e20d4e57441aa96b70c97f982d6d/artifacts
+end_time: 1674037245114
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d148e20d4e57441aa96b70c97f982d6d
+run_name: valuable-shark-52
+run_uuid: d148e20d4e57441aa96b70c97f982d6d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674037191198
+status: 3
+tags: []
+user_id: adrien

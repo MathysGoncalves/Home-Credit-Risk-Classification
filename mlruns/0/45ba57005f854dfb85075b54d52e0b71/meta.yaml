@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mathysg/Documents/ML%20Ops/Home-Credit-Risk-Classification/mlruns/0/45ba57005f854dfb85075b54d52e0b71/artifacts
+end_time: 1674040776599
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 45ba57005f854dfb85075b54d52e0b71
+run_name: amazing-grub-98
+run_uuid: 45ba57005f854dfb85075b54d52e0b71
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674040719087
+status: 3
+tags: []
+user_id: adrien

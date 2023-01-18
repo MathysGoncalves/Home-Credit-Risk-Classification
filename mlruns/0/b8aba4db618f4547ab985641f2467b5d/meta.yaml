@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mathysg/Documents/ML%20Ops/Home-Credit-Risk-Classification/mlruns/0/b8aba4db618f4547ab985641f2467b5d/artifacts
+end_time: 1674040338465
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b8aba4db618f4547ab985641f2467b5d
+run_name: youthful-dove-165
+run_uuid: b8aba4db618f4547ab985641f2467b5d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674040286737
+status: 3
+tags: []
+user_id: adrien

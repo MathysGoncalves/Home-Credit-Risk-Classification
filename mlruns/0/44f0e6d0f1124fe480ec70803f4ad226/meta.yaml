@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mathysg/Documents/ML%20Ops/Home-Credit-Risk-Classification/mlruns/0/44f0e6d0f1124fe480ec70803f4ad226/artifacts
+end_time: 1674047016956
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 44f0e6d0f1124fe480ec70803f4ad226
+run_name: honorable-perch-168
+run_uuid: 44f0e6d0f1124fe480ec70803f4ad226
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674046959320
+status: 3
+tags: []
+user_id: adrien

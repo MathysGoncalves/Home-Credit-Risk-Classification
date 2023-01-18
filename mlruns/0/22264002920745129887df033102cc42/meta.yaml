@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mathysg/Documents/ML%20Ops/Home-Credit-Risk-Classification/mlruns/0/22264002920745129887df033102cc42/artifacts
+end_time: 1674048412228
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 22264002920745129887df033102cc42
+run_name: silent-ray-803
+run_uuid: 22264002920745129887df033102cc42
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674048352820
+status: 3
+tags: []
+user_id: adrien

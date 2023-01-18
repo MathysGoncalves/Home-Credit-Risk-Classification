@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mathysg/Documents/ML%20Ops/Home-Credit-Risk-Classification/mlruns/0/f589c894124b4eed9b95bde36fabdcc7/artifacts
+end_time: 1674040895079
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f589c894124b4eed9b95bde36fabdcc7
+run_name: colorful-frog-171
+run_uuid: f589c894124b4eed9b95bde36fabdcc7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674040837259
+status: 3
+tags: []
+user_id: adrien

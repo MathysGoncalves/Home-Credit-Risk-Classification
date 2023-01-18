@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mathysg/Documents/ML%20Ops/Home-Credit-Risk-Classification/mlruns/0/9fa9c4ae079a4117bf8ecdfb4b9d366b/artifacts
+end_time: 1674034678765
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 9fa9c4ae079a4117bf8ecdfb4b9d366b
+run_name: nimble-sponge-322
+run_uuid: 9fa9c4ae079a4117bf8ecdfb4b9d366b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674034623602
+status: 3
+tags: []
+user_id: adrien

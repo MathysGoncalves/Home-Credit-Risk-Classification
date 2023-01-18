@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mathysg/Documents/ML%20Ops/Home-Credit-Risk-Classification/mlruns/0/51f54760995342959e52bfc6513f8816/artifacts
+end_time: 1674038682213
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 51f54760995342959e52bfc6513f8816
+run_name: rare-doe-984
+run_uuid: 51f54760995342959e52bfc6513f8816
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674038624656
+status: 3
+tags: []
+user_id: adrien

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mathysg/Documents/ML%20Ops/Home-Credit-Risk-Classification/mlruns/0/8f0594b0e21243db901c0e792a86a622/artifacts
+end_time: 1674034358118
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8f0594b0e21243db901c0e792a86a622
+run_name: powerful-boar-639
+run_uuid: 8f0594b0e21243db901c0e792a86a622
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674034300277
+status: 3
+tags: []
+user_id: adrien

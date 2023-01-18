@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mathysg/Documents/ML%20Ops/Home-Credit-Risk-Classification/mlruns/0/80b93f407aba4b3fb9e3fbcd9f30e02b/artifacts
+end_time: 1674040127838
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 80b93f407aba4b3fb9e3fbcd9f30e02b
+run_name: angry-ox-814
+run_uuid: 80b93f407aba4b3fb9e3fbcd9f30e02b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674040076281
+status: 3
+tags: []
+user_id: adrien

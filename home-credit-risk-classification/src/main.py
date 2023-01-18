@@ -17,6 +17,9 @@ from models import predict_model
 
 import logging
 
+import shap
+import matplotlib.pyplot as plt
+
 
 
 logging.basicConfig(level=logging.WARN)
@@ -107,7 +110,7 @@ if __name__ == "__main__":
         mlflow.log_metric("f1", f1)
 
         tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
-
+        
         # Model registry does not work with file store
         if tracking_url_type_store != "file":
 
@@ -118,3 +121,47 @@ if __name__ == "__main__":
             mlflow.sklearn.log_model(model, "model", registered_model_name="LightGBM_Model")
         else:
             mlflow.sklearn.log_model(model, "model")
+        
+    # SHAP
+    print("\nDo you want to get model's explainability ? [y/n]")
+    print("\nAll figures generated will be saved into the repository 'home-credit-risk-classification/reports/figures'\n")
+    answer = input() 
+    if answer == "y": 
+        # initjs (Need to load JS vis in the notebook)
+        shap.initjs() 
+        print("\nexplainer\n")
+        explainer = shap.TreeExplainer(model.best_estimator_)
+        observations = test_x.sample(1000, random_state=7)
+        shap_values = explainer.shap_values(observations)
+
+        """ To fix
+        force plot :
+        print("\nforce plot\n")
+        i=0 # choice of row to explain
+        #shap.force_plot(explainer.expected_value, shap_values[i], features=observations[i], feature_names=list(train_x.columns))
+        #plt.savefig('home-credit-risk-classification/reports/figures/force_plot.png', dpi=199)
+        """
+
+        # summary plot:
+        print("\nsummary plot\n")
+        shap.summary_plot(shap_values, observations, show=False)
+        plt.savefig('home-credit-risk-classification/reports/figures/summary_plot.png', dpi=199)
+
+        # Dependence plot
+        print("\ndependence plot\n", "Select a column to create the dependence plot:\n", list(train_x.columns))
+
+        feature_dep = input("Pick a column of the above list")
+        if feature_dep in list(train_x.columns):
+            shap.dependence_plot(f"{feature_dep}", shap_values[i], observations)
+            plt.savefig(f'home-credit-risk-classification/reports/figures/dependence_plot_{feature_dep}.png', dpi=199)
+        else:
+            print("\nPlease enter a column name\n") 
+
+    elif answer == "n": 
+        print("\nFinished\n")
+    else: 
+        print("\nPlease enter y or n\n") 
+
+
+
+    

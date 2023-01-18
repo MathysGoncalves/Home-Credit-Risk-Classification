@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mathysg/Documents/ML%20Ops/Home-Credit-Risk-Classification/mlruns/0/2e082e0488ae42b7b501ccd9e17f2733/artifacts
+end_time: 1674041193426
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 2e082e0488ae42b7b501ccd9e17f2733
+run_name: nebulous-shrike-376
+run_uuid: 2e082e0488ae42b7b501ccd9e17f2733
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674041132716
+status: 3
+tags: []
+user_id: adrien

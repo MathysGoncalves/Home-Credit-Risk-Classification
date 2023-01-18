@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mathysg/Documents/ML%20Ops/Home-Credit-Risk-Classification/mlruns/0/e3caefbbba1645d584e9e9174c10f6f3/artifacts
+end_time: 1674039920774
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e3caefbbba1645d584e9e9174c10f6f3
+run_name: mercurial-seal-568
+run_uuid: e3caefbbba1645d584e9e9174c10f6f3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674039861611
+status: 3
+tags: []
+user_id: adrien

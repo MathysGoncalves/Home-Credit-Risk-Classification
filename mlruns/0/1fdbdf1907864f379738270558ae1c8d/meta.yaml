@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mathysg/Documents/ML%20Ops/Home-Credit-Risk-Classification/mlruns/0/1fdbdf1907864f379738270558ae1c8d/artifacts
+end_time: 1674037092337
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1fdbdf1907864f379738270558ae1c8d
+run_name: unique-jay-988
+run_uuid: 1fdbdf1907864f379738270558ae1c8d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674037004444
+status: 3
+tags: []
+user_id: adrien

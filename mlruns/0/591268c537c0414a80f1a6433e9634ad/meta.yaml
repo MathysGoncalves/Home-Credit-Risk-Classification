@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mathysg/Documents/ML%20Ops/Home-Credit-Risk-Classification/mlruns/0/591268c537c0414a80f1a6433e9634ad/artifacts
+end_time: 1674032560960
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 591268c537c0414a80f1a6433e9634ad
+run_name: delicate-lamb-180
+run_uuid: 591268c537c0414a80f1a6433e9634ad
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674032492462
+status: 3
+tags: []
+user_id: adrien
